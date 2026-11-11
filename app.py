@@ -125,13 +125,4 @@ if go:
 
         bundle = work / "ClipForge_exports.zip"
         with zipfile.ZipFile(bundle, "w", zipfile.ZIP_DEFLATED) as z:
-            for mp4, srt, _, _ in generated:
-                z.write(mp4, mp4.name)
-                z.write(srt, srt.name)
-        st.download_button("Download all clips + captions (ZIP)", bundle.read_bytes(),
-                           file_name="ClipForge_exports.zip", mime="application/zip")
-        st.caption("Highlight selection is an automatic first pass. Review clips before publishing; it may miss context or choose imperfect moments.")
-    except Exception as e:
-        st.error("Could not process this video.")
-        st.code(str(e))
-        st.write("Check that FFmpeg is installed and available on PATH, and try a smaller transcription model.")
+            for mp4, 
